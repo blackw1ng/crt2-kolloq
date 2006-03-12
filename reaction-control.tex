@@ -1,0 +1,63 @@
+\section{Reaktionsführung}
+\subsection{Maximale Produktivität in einem Batch-Reaktor}
+In einem Batch-Reaktor ($n > 0$) nimmt die Reaktionsgeschwindigkeit mit zunehmer Nähe zum Gleichgewichtsumsatz ab.\\
+Deswegen stellt sich die Frage nach dem optimalen Umsatz $X_{opt}$ und der optimalen Reaktionszeit $t_{opt}$.
+Produktivität ergibt sich zu:\\
+\begin{minipage}[t]{.4\linewidth}
+\[ \fbx{L_p = \frac{c_{10} V X(t)}{t+t_{opt}} } \]
+Somit ergibt sich:
+\[ \left( \frac{dX}{dt} \right)_{opt} = \frac{X_{opt}}{t+t_{opt}}\]
+\end{minipage}
+\begin{minipage}[t]{.6\linewidth}
+\bild[width=50mm]{images/mincosts.eps}
+\end{minipage}
+Im Diagramm ist diese leicht grafisch bestimmbar:
+\[ \left( \frac{dX}{dt} \right)_{cost} = \frac{X_{cost}}{t + \frac{K_3 + K_2 t_{tot}}{K_1}} \]
+
+\subsection{Minimale Kosten in einem Batch-Reaktor}
+Die Kosten für den Betrieb eines Batch-Reaktors setzen sich zusammen aus:
+\bi
+\item $K_1$ zeitabhängige Kosten während des Betriebs
+\item $K_2$ zeitabhängige Kosten während der Reinigung
+\item $K_3$ Feste Kosten pro Ansatz
+\ei
+
+\subsection{Optimale Temperaturführung}
+Die optimale Temperaturführung hängt von der Art der Reaktion ab:
+\bi
+\item {\sc Irreversible} Reaktionen: Die höchste Reaktionsgeschwindigkeit wird bei höchster Temperatur erreicht. In so fern sollte die Reaktion bei höchster wirtschaftlich sinnvoller Temperatur ablaufen.
+\item {\sc Endotherme} Reaktionen: Durch hohe Temperatur wird die Reaktionsgeschwindigkeit und das Gleichgewicht günstig verschoben. Somit auch hier: hohe Temperatur.
+\item {\sc Exotherme} Reaktion: Durch niedrige Temperatur wird das Gleichgewicht günstig verschoben, aber die Reaktionsgeschwindigkeit nimmt ab. Hier liegt ein Optimierungsproblem vor
+\ei
+Die optimale Temperatur liegt bei $\frac{\partial R_{Produkt}}{\partial T} = 0$.\\
+Zur Lösung für ein konkretes Problem geht man von $R$ aus und löst nach Einsetzen von {\sc Arrhenius} und Einführen des Umsatzgrades nach $T$ auf.
+
+\subsection{Komplexe Reaktionen}
+Hier bieten sich 3 Möglichkeiten an, um die Selektivität zu verbessern:
+\be
+\item Einsatz eines selektiven Katalysators bzw. Lösemittels
+\item Temperaturkontrolle (vgl. {\sc Wheeler})
+\item Konzentrationskontrolle (vgl. folgende Kapitel)
+\ee
+
+\subsubsection{Parallelreaktionen}
+Allgemein gilt:
+\bi
+\item PFTR fördert Reaktionen höherer Ordnung
+\item CSTR fördert Reaktionen niedrigerer Ordnung
+\ei
+Die Selektivität ergibt sich hier zu:
+\[ S = \frac{r_1}{r_2} = \frac{k_1}{k_2} c_1^{n-m} \]
+\bi
+\item $n > m$ - Hier sollte $c_1$ so hoch wie möglich sein.
+\item $n < m$ - Hier sollte $c_1$ so niedrig wie möglich sein.
+\item $n = m$ - Hier hat die Konzentration keinen Einfluss.
+\ei
+Sind mehrere Edukte beteiligt wird die Betrachtung schwieriger:
+\[ S = \frac{r_1}{r_2} = \frac{k_1}{k_2} c_1^{n_1-m_1} c_2^{n_2-m_2} \]
+Hierbei ergibt sich eine Matrix. Kurz gesagt: höhere Ordnung braucht höhere Konzentration.
+
+\subsubsection{Folgereaktion}
+Für eine Folgereaktion wird ebenfalls optimale Ausbeute erwünscht. Im Vergleich zwischen PFTR und CSTR ergibt sich aus:
+\[ X_{PFTR} = 1 - \exp (-DaI) \qquad X_{CSTR} = \frac{DaI}{1+DaI} \]
+eingesetzt in $\frac{c_2}{c_{10}}$, dass hier, unabhängig von $\frac{k_1}{k_2}$ stets beim PFTR bei geringerer $DaI$ eine größere Selektivität vorliegt.

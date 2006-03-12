@@ -1,0 +1,98 @@
+\section{Wirbelschicht-Reaktoren}
+Bei Wirbelschichten unterscheidet man zwischen 6 Stadien (vgl. {\sc MVT}):
+\be
+\item $u < u_{mf}$: Festbett
+\item $u \approx u_{mf}$: Lockerungszustand
+\item $u > u_{mf}$: Blasenbildende Wirbelschicht
+\item $u > u_{mf}$: Stoßende Wirbelschicht
+\item $u > u_{mf}$: Kanalbildende Wirbelschicht
+\item $u \gg u_{mf}$: Feststoffaustrag - Zirkulierende Wirbelschicht
+\ee
+Der charakteristische Verlauf des Druckverlusts über der Strömungsgeschwindigkeit ermöglicht die Bestimmung von $u_{mf}$.
+Über die Höhe des Bettes am Lockerungspunkt kann $\varepsilon_{mf}$ bestimmt werden: 
+\[ \varepsilon_{mf} = \frac{V_{s}}{V_{ges}} = A \frac{H_{\mbox{Festbett}}}{H_{\mbox{Lockerungspunkt}}} \]
+Zur Beschreibung einer Wirbelschicht bedient man sich der Kräftebilanz:
+\[ \fbx{ \Delta p = (1 - \varepsilon_{mf}) H g (\rho_p - \rho_f) } \]
+Technisch unterscheidet man zwischen:
+\bi
+\item {\bf Homogene} Wirbelschicht: gleichmäßig expandiert mit $u < 3 u_{mf}$; Typ 2 und 3 (s.o.); Bsp. katalytische Gas-Phasen-Reaktion
+\item {\bf Heterogene} Wirbelschicht: hoch expandiert mit $u > 3 u_{mf}$; Typ 4, 5 und 6; Bsp. Kohleverbrennung oder Rauchgasreinigung.
+\ei
+
+\subsection{Homogene Wirbelschichten}
+Die wichtigste Eigenschaft der homogenen Wirbelschicht ist die Isothermie. Deswegen kann auf eine Enthalpiebilanz komplett verzichtet werden.
+Ausgehend vom eindimensionalen Dispersionsmodell kann nun die Massenbilanz aufgstellt werden:
+\[ \fbx{0 = - u \frac{dc_1}{dh} + D_a \frac{d^2c_1}{dh^2} + k c_1 } \]
+Hierbei ist zu bemerken, dass $D_a = f(d_p;\Psi)$, also von Partikelgröße und Beschaffenheit (Spherizität) abhängig ist.
+
+\subsection{Heterogene Wirbelschichten}
+Für eine heterogen fluidiesierte Wirbelschicht ist es schwer, eine angemessene Beschreibung für den Massentransport zwischen Gasblasen und Katalysator-{\emph Suspension} zu finden. Hier muss auf Modelle zurückgegriffen werden:
+
+\subsubsection{Blasenmodell}
+Dieses Modell wurde von {\sc Kunii} und {\sc Levenspiel} entwickelt und beschreibt den Massentransport zwischen Blase und Suspension in zwei Schritten:
+\be
+\item Massentransport Blase$\rightarrow$Wolke $K_{bc}$
+\item Massentransport Wolke$\rightarrow$Suspension $K_{cs}$
+\ee
+Man beschreibt eine aufsteigende Blase hierbei als einen Batch-Reaktor mit Reaktion 1. Ordnung:
+\[ 0 = - u_b \frac{dc_b}{dh} - K_{eff} c_b \]
+Dabei vereinigt $K_{eff}$ alle kinetischen und massentransportbehafteten Effekte.
+Zur Bestimmung von $K_{eff}$ trifft man folgende Annahmen:
+\bi
+\item Jegliches Gas steigt in Form von Blasen durch die (sozusagen autark) fluidisierte Wirbelschicht
+\item Alle Gasblasen verhalten sich gleichartig in Bezug auf Verweilzeit, Größe und Form
+\item Der Gasaustausch erfolgt über die Wolke/Schleppe der Blase
+\item Stationarität
+\ei
+Hieraus ergibt sich folgendes Lösungskonzept:
+\be
+\item Aufstellen von Bilanzgleichungen für Blase B, Wolke W und Suspension S:
+\ee
+\begin{eqnarray}
+\mbox{Gesamtumsatz} &=& \mbox{Reaktion in B} + \mbox{Transport B-W} \\
+\mbox{Transport B-W} &=& \mbox{Reaktion in W} + \mbox{Transport W-S} \\
+\mbox{Transport W-S}&=& \mbox{Reaktion in W}
+\end{eqnarray}
+\bi
+%Reaktion in Blase = Transport von Wolke\\
+%Transfer von Wolke = Reaktion in Wolke + Transport von Suspension\\
+%Transport von Suspension = Reaktion in Suspension
+\item[2.] Lösen dieser durch Einsetzen von (3) in (2) und (2) in (1).
+\item[3.] Eliminieren der unbekannten Konzentrationen $c_s$ und $c_c$.
+\item[4.] Auflösen nach $K_{eff}$.
+\ei
+Nach Lösung der Massenbilanz
+\[ (1-X) = \exp \left( - \frac{K_{eff} H}{u_b} \right) \]
+kann $1-X$ in Abhängigkeit von $H$ grafisch aufgetragen werden.\\
+$\ominus$ Der unsicherste Parameter ist hierbei $u_b$, welcher abhängig von der Blasengrößenverteilung aufgetragen wird.
+\bi
+\item experimentelle Ermittlung
+\item (nachträgliche) Anpassung der Parameter
+\item[$\Rightarrow$] kein A-Priori-Modell!
+\ei
+
+\subsubsection{Zweiphasenmodell}
+In diesem Modell von {\sc Van Deemter} wird angenommen, dass sich das einströmende Gas in zwei Teile aufspaltet:
+\be
+\item Teil zum Fluidisieren des Betts. Strömt durch Suspensionsphase mit $u_{mf}$.
+\item Teil formt Blasen, welche mit $u - u_{mf}$ durch den Reaktor wandern.
+\ee
+Zwischen Blase und Suspension findet ein Massentranfer $\alpha$ statt.
+Eine Reaktion findet ausschließlich in der Suspension statt (hier ist der Unterschied zum Blasenmodell!).\\
+Massenbilanz für Suspensionsphase:
+\[ 0 = - u_{mf} \frac{dc_s}{dh} + D_a \varepsilon_{mf} \frac{d^2c_s}{dh^2} + \alpha (c_b -c_s) + (1-\varepsilon_b)(1-\varepsilon_{mf}) \rho_s k' c_s \]
+Massenbilanz für die Blase-Phase:
+\[ 0 = - (u - u_{mf}) \frac{dc_b}{dh} - \alpha (c_b - c_s) \]
+
+\subsubsection{Filmmodell}
+{\sc Werther} entwickelte als Erweiterung des Zweiphasenmodells das Filmmodell, welches eine Behandlung analog der Fluid-Fluid-Reak\-tionen vorschlägt.
+\bi
+\item Bilanzierung um Blase, Film und Suspension
+\item Massentransport durch die Phasengrenze wird einer Adsorption gleichgesetzt
+\item pseudo-homogene Reaktion in der Suspensionsphase wird angenommen
+\ei
+Durch die üblichen Randbedingungen erfolgt eine analytischen Lösung, welche, wie bereits aus der Fluid-Fluid-Beschreibung bekannt, die $Ha$-Zahl und $B$ enthält.
+\bi
+\item[$\oplus$] Zugänglichkeit von $k_g$, $a$ (spez. Oberfläche in $B$) und $\varepsilon_{mf}$ über Korrelationen
+\item[$\Rightarrow$] {\bf A-Priori-Design} von Wirbelschichten ohne Experimente ist möglich!
+\ei

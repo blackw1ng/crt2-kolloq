@@ -1,0 +1,175 @@
+\subsection{Einfluss der Porendiffusion auf die Selektivität}
+{\sc Wheeler} entwickelte eine Betrachtungsweise zur Beurteilung der Selektivität von Reaktionen.
+
+\subsubsection{Unabhängige Reaktionen}
+Für zwei unabhängige Reaktionen erster Ordnung der Reaktanden $A$ und $B$ gilt die Selektivität $ \sigma$:
+\[ \sigma= \frac{r_B}{r_A}= \frac{c_Bk_2 \eta_B}{c_Ak_1 \eta_A} \stackrel{ \phi>3}= \sqrt{ \frac{k_2D_{B,obs}}{k_1D_{A,obs}}} \]
+\be
+\item größeres Molekül $B$ ist reaktiver
+\[ \frac{D_{B,obs}}{D_{A,obs}}<1 \mbox{ und } \frac{k_2}{k_1}>1 \]
+\item[$\Rightarrow$] Selektivität sinkt, wenn $ \eta$ sinkt
+\item reaktiveres Molekül weist auch wesentlich höheren $D_{obs}$ auf:
+\[ \sqrt{ \frac{k_2D_{B,obs}}{k_1D_{A,obs}}}> \frac{k_2}{k_1} \]
+\item[$\Rightarrow$] Selektivität erhöht sich mit sinkendem Wirkungsgrad;\\
+Technische Anwendung: formselektive Zeolithe\\
+($D_{linear}>D_{verzweigt}$ und $D_{p-Aromaten}>D_{o-Aromaten}$)
+\ee
+
+\subsubsection{Parallelreaktionen}
+Bei einer Parallelreaktion $A^{ \nearrow \displaystyle \mbox{B}}_{ \searrow \displaystyle \hbox{C}}$ mit gleichen Reaktionsordnungen beeinflusst $ \eta$ nicht die Selektivität $S= \frac{k_1}{k_2}$.
+Wenn $A \rightarrow B$ eine Reaktion 1. Ordnung und $A \rightarrow C$ eine Reaktion 2. Ordnung ist, steigt die Selektivität für $B$, wenn $ \eta$ sinkt. $ \Rightarrow$ Manchmal ist ein niedriger Wirkungsgrad zu Gunsten höherer Selektivität erwünscht.
+
+\subsubsection{Folgereaktionen}
+Für eine Folgereaktion $A \stackrel{k_1} \rightarrow B \stackrel{k_2} \rightarrow C$ gilt: \\
+mit Porendiffusion:
+\[ \sigma= \frac{r_B}{r_A}= \frac{k_1c_A-k_2c_B}{k_1c_A}=1- \frac{c_B}{c_A S} \quad \mbox{mit} \quad S= \frac{k_1}{k_2} \]
+ohne Porendiffusion:
+\[ \sigma= \frac{r_B}{r_A}= \frac{ \sqrt{S}}{1+ \sqrt{S}}- \frac{c_B}{c_A \sqrt{S}} \quad \mbox{mit} \quad \phi>3 \]
+
+\subsection{Zeolithe}
+\begin{itemize}
+\item kristalline, hydratisierte Aluminosilikate mit Netzwerkstruktur
+\item 3-dimensionales, polyanionisches Netzwerk
+\item bestehend aus SiO$_4$- und AlO$_4$-Tetraedern
+\item empirische Formel: M$_{2/n} \cdot$xAl$_2$O$_3 \cdot$ySiO$_2 \cdot$zH$_2$O ($n$ = Valenzelektronen des Kations; $y \ge 2$ = Anzahl gebundener Wassermoleküle
+\item regelmäßige Kanäle oder verbundene Zwischenräume (Porendurchmesser $<2 \,nm$)
+\item Poren enthalten Wassermoleküle oder ladungsausgleichende Kationen
+\item Kationen: mobile, austauschbare Alkali- oder Erdalkalimetallionen 
+\end{itemize}
+Diffusion in Zeolithen liegt im Bereich der konfigurellen (Größe von Kohlenwasserstoffen $ \approx$ Kanaldurchmesser) und {\sc Knudsen}-Diffusion (Porenwand beeinflusst Moleküle). \\
+Arten der Formselektivität:
+\begin{itemize}
+\item Reaktanden-
+\item Produkt-
+\item Zwischenformselektivität
+\end{itemize}
+Technisch wichtigste Anwendung für Zeolithe: Fluid Ca\-ta\-ly\-tic Crac\-king (FCC)
+\begin{itemize}
+\item Riser-Downer(=Regenerator)-Prinzip
+\item saurer Zeolith-Kat
+\item endotherm
+\item Druck etwas über $1 \,bar$
+\item Temperatur $ \approx 500 \,°C$
+\end{itemize}
+
+\subsection{Einfluss der Filmdiffusion}
+\[ r_{obs}= \beta_A \cdot \left(c_{Ab}-c_{As} \right)=k_s \cdot c^n_{As} \quad \left[ \frac{mol}{m^2 \cdot s} \right] \] 
+b: bulk, s: surface
+\begin{table}[H]
+\begin{tabular}{p{4.3cm}p{4.3cm}}
+\bf Starke Limitierung durch Filmdiffusion	& \bf Keine Limitierung durch Filmdiffusion	 \\
+(Diffusionsregime)				& (kinetisches Regime)				 \\
+$ \rightarrow$ steiler Konzentrationsgradient	& $ \rightarrow$ kein Konzentrationsgradient	 \\
+$k_s \gg \beta$					& $ \beta \gg k_s$				 \\	
+$r_{obs}= \beta \cdot c_b$			& $r_{obs}=k \cdot c^{n_{true}}_b$		 \\
+$n_{obs}=1$					& $n_{obs}=n_{true}$				 \\
+$E_{A,obs}<5 \,kJ/mol$				& $E_{A,obs}=E_{A,true}$			 \\
+\end{tabular}
+\end{table}
+Technische Beispiele mit starker Beeinflussung durch Filmdiffusion
+\begin{itemize}
+\item nicht poröse Katalysatoren, "Shell"-Katalysatoren
+\item Katalysatornetze (NH$_3$-Oxidation)
+\item katalytische Wandreaktoren (Mikroreaktionstechnik)
+\end{itemize}
+Ammoniakoxidation
+\[ \quad \chemie{NH_3} \chemie{PLUS} \chemie{5O_2} \chemie{EQUILIBRIUM}{Pt-Netz}{ca. 900°C} \chemie{4NO} \chemie{PLUS} \chemie{6H_2O} \qquad \Delta H_R = - 906 \frac{kJ}{mol} \]
+\begin{itemize}
+\item sehr stark exotherm $ \Rightarrow$ Kontaktzeit: $1/1000 \,s$ (!)
+\item Grund für nichtporöses Pt-Netz: Vermeidung von Folgereaktionen (NO ist instabil)
+\end{itemize}
+Filmtheorie: Molekulare Diffusion durch einen laminaren Grenzfilm der Dicke $ \delta=f \left(u, \rho, \nu,d_p \right)$.\\
+{\sc Fick}'sches Gesetz:
+\[ \fbx{ \displaystyle J=-D \cdot \frac{dc}{dx}= \frac{D}{ \delta} \cdot \left(c_b-c_s \right) } \quad \left[ \frac{mol}{m^2 \cdot s} \right] \]
+Korrelation unter Verwendung der dimensionslosen Kennzahlen $Sh$, $Re$ und $Sc$ führt zu:
+\[ \beta \propto \sqrt{ \frac{u}{d_p}} \] 
+Experimentelle Methode zur Überprüfung des Porendiffusionseinflusses:
+\begin{enumerate}
+\item Variation der Strömungsgeschwindigkeit $u$ bei konstanter Verweilzeit
+\item Bestimmung des Umsatzgrades $X$
+\item Auftragung von $X$ gegen $u$ $ \Rightarrow$ Umsatz erreicht Plateau
+\end{enumerate}
+
+\subsection{Gleichzeitiger innerer und äußerer Massentransport}
+Massentransportlimitierung beginnt in der Pore und endet im Film. $\Leftrightarrow$ Wärmetransport umgekehrt.
+\[ \eta = f \Bigg( \underbrace{Bi_m = \frac{ \beta \cdot R}{D_e} = \frac{ \mbox{Filmdiffusion}}{ \mbox{Porendiffusion}}}_{ \mbox{{ \sc Biot}-Zahl}} ;\quad \underbrace{ \phi = R \sqrt{ \frac{ k(T_b) \cdot c^{n-1}_b}{D_e} }}_{ \mbox{{ \sc Thiele}-Modul}} \Bigg) \]
+Für $Bi>100$ kann der Einfluss der Fimdiffussion vernachlässigt werden.
+\subsection{Gleichzeitiger innerer und äußerer Wärme- und Massentransport}
+\[ r_{obs} \left(T_b,c_{Ab} \right)= \eta \cdot r_{true} \left(T_b,c_{Ab} \right)= \eta \cdot k \left(T_b \right) \cdot c^n_{Ab} \]
+Bilanz über eine Kugelschale der Dicke $d \hat x$:
+\[ \left( \mbox{Inflow} \right)_{ \hat x+d \hat x}- \left( \mbox{Outflow} \right)_{ \hat x}= \mbox{Reaktion} \]
+\paragraph{Massentransport:}
+\begin{eqnarray}
+\mbox{Inflow:} \quad&&-4 \pi \cdot \left( \hat x+d \hat x \right)^2 \cdot D_e \cdot \left. \frac{dc}{d \hat x} \right|_{ \hat x+d \hat x} \nonumber \\
+\mbox{Outflow:} \quad&&-4 \pi \cdot \hat x^2 \cdot D_e \cdot \left. \frac{dc}{d \hat x} \right|_{ \hat x} \nonumber \\
+\mbox{Reaktion:} \quad&&r \cdot dV=k \cdot c^n \cdot4 \pi \cdot \hat x^2d \hat x \nonumber
+\end{eqnarray}
+\[ \frac{d^2f}{dx^2}+ \frac{2}{x} \frac{df}{dx}= \phi^2 \cdot f^n \cdot \exp \left( \gamma \left(1- \frac{1}{ \Theta} \right) \right) \]
+\paragraph{Wärmetransport:}
+\begin{eqnarray}
+\mbox{Inflow:} \quad&&-4 \pi \cdot \left( \hat x+d \hat x \right)^2 \cdot \lambda_e \cdot \left. \frac{dc}{d \hat x} \right|_{ \hat x+d \hat x} \nonumber \\
+\mbox{Outflow:} \quad&&-4 \pi \cdot \hat x^2 \cdot \lambda_e \cdot \left. \frac{dc}{d \hat x} \right|_{ \hat x} \nonumber \\
+\mbox{Reaktion:} \quad&&r \cdot \left(- \Delta H_R \right) \cdot dV=k \cdot c^n \cdot \left(- \Delta H_R \right) \cdot4 \pi \cdot \hat x^2d \hat x \nonumber
+\end{eqnarray}
+\[ \frac{d^2 \Theta}{dx^2}+ \frac{2}{x} \frac{d \Theta}{dx}= \beta_{Pr} \cdot \phi^2 \cdot f^n \cdot \exp \left( \gamma \left(1- \frac{1}{ \Theta} \right) \right) \]
+mit: $ \displaystyle \quad f= \frac{c}{c_b} \quad \Theta = \frac{T}{T_b} \quad x= \frac{ \hat x}{R}$ \\
+Randbedingungen:
+\be
+\item $x=1$: $f=1$, $ \Theta=1$  
+\item $x=0$: $ \frac{df}{dx}=0$, $ \frac{d \Theta}{dx}=0$
+\ee
+Dimensionslose Kennzahlen:
+\begin{eqnarray}
+\mbox{{ \sc Thiele}-Modul:} \quad && \fbx{ \phi=R \sqrt{ \frac{ k( T_b ) \cdot c^{n-1}_b}{D_e} } } \nonumber \\
+\mbox{{ \sc Arrhenius}-Zahl:} \quad && \fbx{ \gamma = \frac{E_A}{R \cdot T_b} } \nonumber \\
+\mbox{{ \sc Prater}-Zahl:} \quad && \fbx{ \beta_{Pr} = \frac{c_b \cdot D_e \cdot(- \Delta H_R)}{ \lambda_e \cdot T_b} = \frac{\Delta T_{max}}{T_b} } \nonumber
+\end{eqnarray}
+\bi
+\item[$\beta_{Pr}$] über Bulktemperatur normalisierte Maximaltemperatur im Pellet; $\beta_{Pr}>0$: exotherm; $\beta_{Pr}<0$: endotherm; aber: i.d. Praxis $ß$ selten $>0,1$ 
+\item[$\gamma$] Maß für Temperaturabhängigkeit der Reaktion
+\item[$\eta>1$] für kleine Werte von $\phi$, da Anstieg von $k$ den langsamen Konzentrationsabfall übertrifft
+\item[$\eta \gg 1$] sehr stark exotherme Reaktionen ($\eta$-Überhang), i.d. Praxis unerwünscht $\Rightarrow$ Kat-Deaktivierung
+\item[$\beta_{Pr}<0$] $\Rightarrow$ $\eta<0$ für alle Werte von $\phi$, da $k$ und $c$ zur Pelletmitte hin sinken
+\ei 
+
+\subsection{"A priori"-Kriterien}
+Keine Transporthemmung (willkürliche Festlegung):
+\[ \eta=\frac{r_{obs}}{r\left(T_b,\,c_b\right)}=1\pm 0,05 \]
+keine Hemmung, wenn...
+\subsubsection{Externe Wärmetransportlimitierung (Wärmeübergang)}
+{\sc Mears}-Kriterium:
+\[ \quad \fbx{ \frac {\left| \Delta H_R \right| \cdot r_{obs} \cdot R}{h \cdot T_b}<0,15 \frac{R \cdot T_b}{E_A}= \frac{0,15}{\gamma} } \]
+$h$: Wärmetransportkoeffizient (auch $k \quad \left[ \frac{W}{m^2 \cdot K} \right]$)
+\subsubsection{Interne Wärmetransportlimitierung (Wärmeleitung)}
+{\sc Anderson}-Kriterium:
+\[ \quad \fbx{ \frac {\left| \Delta H_R \right| \cdot r_{obs} \cdot R^2}{\lambda \cdot T_s}<0,75 \frac{R \cdot T_b}{E_A}= \frac{0,75}{\gamma} } \]
+$\lambda$: Wärmeleitfähigkeit
+\subsubsection{Externe Massentransportlimitierung (Filmdiffusion)}
+{\sc Mears}-Kriterium:
+\[ \quad \fbx{ \frac {r_{obs} \cdot R}{c_b \cdot \beta} < \frac{0,15}{n} } \]
+$n$: Reaktionsordnung
+\subsubsection{Interne Massentransportlimitierung (Porendiffusion)}
+{\sc Weisz-Prater}-Kriterium:
+\[\quad \fbx{ \Phi = \frac{r_{obs} \cdot R^2}{c_s \cdot D_e}=\phi^2 \cdot \eta } \]
+$\Phi<6$ für Reaktion 0. Ordnung\\
+$\Phi<1$ für Reakttion 1. Ordnung\\
+$\Phi<0,3$ für Reaktion 2. Ordnung
+
+\subsection{Einzelpelletreaktor}
+Zur experimentellen Bestimmung von $k$ und $D_e$, bestehend aus:
+\bi
+\item gradientenfreiem, vollständig rückvermischtem Schlaufenreaktor
+\item linker Seite der Reaktionskammer (Konzentration $c_i$)
+\item einzelnem Katalysatorpellet der Länge $L$ (Koordinate $z'$) und Masse $m_{Kat}$
+\item rechter Seite der Reaktionskammer (Konzentration $c_{iB}$)  
+\item[$\Rightarrow$] $c_{iB}$ entspricht der Konzentration in der Mitte eines Katalysatorpellets der doppelten Größe
+\ei
+Die Massenbilanz kann ausgehend vom allgemeinen Fall (keine Konvektion, Diffusion über ebene Platte $A$ zwischen $z'$ und $z' +dz'$, isotherm, nur Porendiffusion) durch {\sc Taylor}-Entwicklung und Einfügen der dimensionslosen Größen $f$ und $z$ vereinfacht werden:
+\[ \fbx{\frac{d^2f}{dz^2} - \phi^2 f^n = 0} \quad \mbox{mit} \mbox \quad f = \frac{c_i}{c_{is}} \quad \mbox{und} \quad z = \frac{z'}{L} \]
+\be
+\item {\sc Thiele}-Modul $\phi$ aus den Messwerten: $\displaystyle f = \frac{c}{c_s} = \frac{1}{\cosh \phi} $ %\quad \leadsto \phi = \mbox{arcosh} \left( \frac{c_s}{c} \right) $
+\item Wirkungsgrad $\eta$ via $\displaystyle \eta = \frac{\tanh \phi}{\phi} $
+\item $k$ via $\displaystyle \eta= \frac{r_{eff}}{k \cdot c_{is}} \quad \mbox{mit} \quad r_{eff}=\frac{\dot V \left( c_i-c_{i0} \right)}{\nu_i \cdot m_{cat}} $
+\item $D_e$ mit bekanntem $k$ via $\displaystyle \phi=L \sqrt{ \frac{ k \cdot c^{n-1}_s}{D_e} } $
+\ee
+

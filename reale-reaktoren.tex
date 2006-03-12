@@ -1,0 +1,174 @@
+\section{Reale Reaktoren}
+Reale Reaktoren unterscheiden sich von idealen Reaktoren in vielen Details:
+\bi
+\item Radiale Profile von Konzentration und Temperatur
+\item Axiale Dispersion
+\item Kanalbildung
+\item Totvolumina
+\item Kurzschlussströmungen
+\ei
+Eine hohe Aussagekraft bei der Modellierung realer Reaktoren bieten Verweilzeitverteilungskurven.\\
+\bild[width=70mm]{images/vwz-summe.eps}
+
+Fortgeschrittene Modelle berücksichtigen auch weitere Parameter.
+
+\subsection{Segregation}
+Die Segegration beschreibt das sogenannte Mikrovermischungsverhalten von Reaktoren. Man unterscheidet zwischen:
+\bi
+\item {\bf Mikrofluid} ($J = 0$) Vermischung auf mikroskopischer Ebene: Einzelne Moleküle sind beteiligt.
+\item {\bf Makrofluid} ($J = 1$) Vermischung auf makroskopischer Ebene: Molekülverbände bzw. Volumenelemente sind beteiligt.
+\ei
+Systeme, welche weder Makro- noch Mikrofluid sind, nennt teilsegregierte Fluide.
+Segegration ist eine charakteristische Funktion von Fluid- und Systemeigenschaften.\\
+Vollständige Segregation bedeutet:
+\bi
+\item Moleküle können sich lediglich mit anderen Molekülen im eigenen Volumenelement vermischen. Eine Vermischung mit Molekülen eines anderen Volumenelements ist nicht möglich.
+\item Einzelne Einheiten vermischen sich mit anderen. Dies bestimmt die Mischeigenschaften eines Systems.
+\ei
+Experimentell kann der Grad der Segregation nur schwer bestimmt werden. Allerdings interessiert dies auch in der Praxis nicht.\\
+Hier ist lediglich relevant:
+\bi
+\item Wie wird der Umsatz beeinflusst?
+\item Welche Art der Vermischung fördert welche Reaktion?
+\item Wie groß sind die Unterschiede?
+\ei
+
+\subsubsection{Fallunterscheidung}
+\be
+\item {\bf BSTR} Kein Einfluß von Segregation, da alle Elemente zu gleicher Zeit Reaktion beginnen und gleich reagieren. Somit überall gleiches $c$ bzw. $X$.
+\item {\bf PFTR} Ebenfalls kein Einfluß der Segregation.
+\item {\bf Alle anderen} Reaktortypen, in welchen nicht alle Volumenelemente die gleiche Verweilzeit besitzen, beeinflusst die Segregation den Umsatzgrad!
+\item Bei {\bf Reaktionen 1. Ordnung} hat die Segregation wiederum keinen Einfluss!
+\ee
+
+\subsubsection{Berechnungen}
+Im Fall einer Reaktion von A zu Produkten ergibt sich aus dem Potenzansatz bei Betrachtung zweier Volumenelemente ' und " für
+\be
+\item Micromixing
+\[ r_M = k \left( \bar{c}_A \right)_M^n = k \frac{( c'_A + c"_A )^n}{2^n} \]
+Hierbei ist $\bar{c}_A = ( c'_A + c''_A ) / 2$, also der Mittelwert der Konzentrationen beider Elemente.
+\item Makromixing 
+\[ r_S = k \frac{{c'}_A^n + {c"}_A^n}{2} \]
+Da die Volumenelement getrennt sind, ergibt sich die Reaktionsgeschwindigkeit aus den Mittelwerten der Einzelnen.
+\ee
+Zum Vergleich bildet man das Verhältnis:
+\[ \fbx{\frac{r_S}{r_M} = \frac{\frac{{c'}_A^n + {c"}_A^n}{2}}{\frac{( c'_A + c"_A )^n}{2^n}}} \]
+Hier kann man 3 Fälle unterscheiden:
+\be
+\item $n = 1 \leadsto r_S/r_M = 1 \rightarrow$ kein Einfluss der Segregation auf den Umsatz.
+\item $n > 1 \leadsto r_S/r_M > 1 \rightarrow$ höherer Umsatz bei vollständiger Segregation.
+\item $n < 1 \leadsto r_S/r_M < 1 \rightarrow$ höherer Umsatz bei Micromixing.
+\ee
+Daraus folgt direkt eine bestimmte Wahl der Betriebsweise!
+
+\subsubsection{Modell idealer paralleler Strömungsrohre}
+Ein Reaktor mit bekannter Verweilzeitverteilung $E(t)$ kann mit dem Modell idealer paralleler Strömungsrohre unterschiedlicher Länge (Verweilzeit) angenähert werden. Dabei geht man von kompletter Segregation der einzelnen Volumenelemente aus. 
+\[ \left[ \bar X \right] = \sum \left[ \mbox{X für Element mit VWZ $t$} \right] \cdot \left[ \mbox{Anteil Elemente mit VWZ $t$ bis $t+dt$} \right] \]
+\[ \fbx{ \bar{X} = \int_0^{\infty} X(t) \, E(t) \, dt = \int_0^1 X(t) \, dF(t)} \]
+Das benötigte $X(t)$ stammt entweder aus einem kinetischen Ansatz oder wird im Batch-Reaktor experimentell bestimmt.
+
+\subsubsection{Abhängigkeit der Selektivität einer Parallelreaktion von $J$}
+Für eine Parallelreaktion von A$_1$ zu A$_2$ mit $k_1c_1$ und zu A$_3$ mit $k_2c^2_1$ gilt:
+\bi
+\item In einem CSTR gleicher VWZ-Verteilung wird die Reaktion zweiter Ordnung durch vollständige Segregation favorisiert.
+\item Die Selektivität für A$_2$ wird folglich durch Micromixing erhöht. 
+\ei
+
+\subsubsection{Graphische Methode zur Bestimmung des Umsatzgrades}
+Die Zuordnungsmethode nach {\sc Schönemann} und {\sc Hofmann} bietet die Möglichkeit, bei bekanntem Verweilzeitverhalten und Kinetik eine Aussage zu dem durchschnittlichen Umsatzgrad zu machen.
+\begin{minipage}[t]{.55\linewidth}
+Das Prinzip ist:
+\be
+\item Aufzeichnen der experimentell bestimmten $F(t)$-Kurve des Reaktors
+\item Aufzeichnen der experimentell bestimmten $X(t)$-Kurve der Reaktion aus Batch-Reaktor
+\item $\displaystyle \bar{X} = \int_0^1 X(t) \, dF(t)$
+\ee
+\end{minipage}
+\begin{minipage}[t]{.45\linewidth}
+\bild[width=38mm]{images/xft.eps}
+\end{minipage}
+Dies bietet eine exakte Lösung für vollständige Segregation und Reaktionen 1. Ordnung, sowie eine gute Näherung bei kleinen Umsatzgraden.
+Die Grundlage liefert das Modell idealer paralleler Strömungsrohre.
+
+\subsection{Eindimensionales Dispersionsmodell}
+Das Dispersionsmodell ist von hoher praktischer Relevanz zur Beschreibung realer Rohrreaktoren. Ausgehend von der Massenbilanz für einen stationären, isothermen Reaktor mit volumenkonstanter, simpler Reaktion und lokal konstanter Dispersion folgt:
+\[ \fbx{ u \frac{\partial c}{\partial z} = - D_z\frac{\partial^2c}{\partial z^2} + \sum \nu_{ij} r_j } \]
+Durch Einsetzen der Randbedingungen nach {\sc Danckwert} ergibt sich:
+\begin{eqnarray}
+z = 0 &\quad& u c_i - D_z \frac{dc_i}{dz} = u c_{i0} \nonumber \\
+z = L &\quad& \frac{dc_i}{dz} = 0 \nonumber 
+\end{eqnarray}
+Im Falle der analytischen Lösung erhält man 2 weitere Kennzahlen:
+\begin{eqnarray}
+\mbox{Axiale {\sc Peclet}-Zahl:} &\quad& Pe_{ax}=\frac{L \bar u}{D_{ax}} \nonumber\\
+\mbox{Reaktionszahl $a$:} & \quad& a = \sqrt{1 + k \tau Pe_{ax}} \nonumber 
+\end{eqnarray}
+Es können folgende Aussagen gemacht werden:
+\bi
+\item Große Unterschiede zwischen verschiedenen Reaktoren gibt es  bei hohen Umsätzen (z.B. $X > 0.9$)
+\item Für Umsätze $X \ge 0.99$ braucht man sehr hohe $DaI$
+\item Bei gleicher $DaI$ erzielt ein PFTR stets den höchsten Umsatzgrad
+\ei
+
+\subsubsection{Enthalpiebilanz}
+In strikter Analogie zur Massenbilanz:
+\[ \fbx{ u \frac{\partial T}{\partial z} = - \lambda_{ez}\frac{\partial^2T}{\partial z^2} + q_R - q_W} \]
+\[ \mbox{mit} \quad q_R = \sum^M_{j=1} \left(- \Delta H_R \right)_j r_j \quad \mbox{und} \quad q_W = \frac{1}{d_t} k_W \left( T-T_K \right) \] 
+Randbedingungen analog Massenbilanz.
+Die effektive Wärmeleitfähigkeit $\lambda_{ez}$ kann über Korrelationen bestimmt werden.
+
+\subsection{Mehrdimensionales Dispersionsmodell}
+In der Praxis werden gewöhnlich 2-dimensionale Dispersionsmodelle verwendet bei
+\bi
+\item großem Reaktorradius $R$
+\item schnellen Reaktionen mit hoher Wärmeausbeute
+\item schlechter Wärmeleitfähigkeit in Festbetten
+\ei
+Den Bilanzraum stellt hierbei ein Kreisring-Volumenelement der Länge $\Delta z$ und Dicke $\Delta r$ dar.
+Bedingungen:
+\bi
+\item mehrere Reaktionen $j=1,\ldots,M$
+\item pseudo-homogenes System von Fluid und Katalysator
+\item Nicht konvektive Transportprozesse weren durch nur eine Richtung beschrieben: $D_z; \ D_r; \ \lambda_{ez}; \ \lambda_{er}$
+\item Durchfluss ist über gesamten Reaktorquerschnitt konstant; $u_{Packung}=u_{Leerrohr}/\varepsilon$
+\item Wärmetransport in radialer Richtung setzt sich aus $\lambda_{er}$ und $\alpha_{Wand}$ zusammen
+\item radiale Symmetrie
+\ei
+Die Bilanz setzt sich wie folgt zusammen:
+\[ \frac {\partial c_i}{\partial t}\underbrace{2 \pi r \Delta r \Delta z}_{\Delta V} = \mbox{ (1) - (2) + (3) - (4) + (5)} \quad \left[ \frac{mol}{s} \right] \]
+\be
+\item axiale Konvektion und Dispersion {\bf "Inflow"} an der Stelle $z$
+\item axiale Konvektion und Dispersion {\bf "Outflow"} an der Stelle $z + \Delta z$
+\item radiale Dispersion {\bf "Inflow"} an der Stelle $r$
+\item radiale Dispersion {\bf "Outflow"} an der Stelle $r + \Delta r$
+\item Reaktion im Volumenelement
+\ee
+Die Wärmebilanz kann wiederum in strikter Analogie behandelt werden.\\
+Randbedingungen:
+\be
+\item $r=0$: kein radialer $c$/$T$-Gradient aufgrund Symmetrie
+\item $r=R$: kein radialer $c$-Gradient, jedoch Wärmeübergang 
+\item $z=0$: keine Reaktion, nur Dispersion und Konvektion
+\item $z=L$: kein axialer $c$/$T$-Gradient aufgrund Quasistationarität 
+\item[$\Rightarrow$] wird die Dispersion gegenüber Konvektion vernachlässigt vereinfacht sich (3.) entsprechend  
+\ee
+
+\subsection{Kaskadenmodell}
+Oft ist es schwierig ein {\it Randwertproblem}, wie das Dispersionsmodell, mathematisch zu lösen.
+Im Gegensatz dazu stellt das Kaskadenmodell gewöhnlich ein einfaches {\it Anfangswertproblem} dar.
+Das Kaskadenmodell basiert auf einer Rührkesselkaskade mit einem Kessel für den CSTR und unendlich vielen Kesseln für den PFTR.
+
+\subsubsection{Eindimensionales Kaskadenmodell mit Recycle}
+Das lineare Kaskadenmodell wird um einen Recycling-Strom $f$, der die axiale Rückvermischung modelliert, erweitert.\\
+Die Massenbilanz für den $k$-ten Kessel lautet:
+\[ V_k \frac{d c_k}{d t} = \underbrace{ \dot V \left( 1 + f \right) \left( c_{k-1} - c_k \right)}_{ \mbox{Konvektion} } + \underbrace{\dot V f \left( c_{k+1} - c_k  \right)}_{ \mbox{Dispersion} } + \underbrace{V_k R_k}_{ \mbox{Reaktion} } \]
+
+\subsubsection{Zweidimensionales Kaskadenmodell ohne Recycle}
+Das zweidimensionale Kaskadenmodell modelliert einen Reaktor wie folgt:
+\bi
+\item $K$ Ebenen von jeweils $W/2$ {\it radial versetzt} übereinander angeordenten Kreisringscheiben
+\item Befüllung jeweils durch zwei vorgeschaltetete Volumenelemente
+\item Volumenelement ideal durchmischt
+\item Entleerung jeweils in die zwei nachgeschalteten Volumenelemente
+\ei
+Im stationären Fall werden nun $K \cdot W/2$, im allgemeinen nichtlineare, Gleichungen erhalten. Die gleichzeitige Lösung liefert die axiale und radiale Konzentrationsverteilung.

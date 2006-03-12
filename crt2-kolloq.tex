@@ -1,0 +1,103 @@
+\documentclass[9pt,a4paper,fleqn,german]{scrartcl}
+
+% enc
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+
+\usepackage{german}
+\usepackage[german]{babel}
+
+% tweaking für pdf 
+\usepackage{ae}
+\usepackage{a4}
+%\usepackage{anysize}
+\usepackage[left=1cm,top=1cm,right=1cm,bottom=1.2cm,nofoot,nohead]{geometry}
+\pagestyle{plain}
+
+% references
+\usepackage[ps2pdf]{hyperref}
+\usepackage{varioref}
+
+% grafiken
+\usepackage{graphicx}
+%\usepackage{pictex}
+
+% speziell symbole
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathbbol}
+\usepackage{pxfonts}
+\usepackage{stmaryrd}
+\usepackage[small,compact]{titlesec}
+\usepackage{float}
+
+% itemstacking
+\usepackage{atbeginend}
+\AfterBegin{itemize}{ \addtolength{\itemsep}{-1.7ex}}
+\AfterBegin{enumerate}{ \addtolength{\itemsep}{-1.7ex}}
+\BeforeBegin{tabular}{ \vspace{-2ex} }
+\AfterEnd{tabular}{ \vspace{-2ex} }
+\BeforeBegin{figure}{ \vspace{-3ex} }
+\AfterEnd{figure}{ \vspace{-3ex} }
+
+% PPCHTEX
+\usepackage{m-pictex}
+\usepackage{m-ch-de}
+
+\hypersetup{%
+pdftitle = {CRT Vertiefungs Formelsammlung},
+pdfsubject = {Kurzzusammenfassung und Formelsammlung zum Vertiefungsfach "Chemische Reaktionstechnik", CBI, Erlangen},
+pdfauthor = {Florian Enzenberger, Sebastian Werner},
+pdfcreator = {GhostScript},
+pdfproducer = {LaTeX},
+pdfstartview = {FitH},
+}
+
+% mehr zeuch aufs blatt
+%\setlength{\textheight}{25cm}
+%\setlength{\topmargin}{-1cm}
+%\setlength{\parskip}{\baselineskip}
+\addtolength{\parskip}{-1mm}
+\setlength{\parindent}{0pt}
+
+% brauchen latex2e
+\NeedsTeXFormat{LaTeX2e}
+
+% neue commands
+\newcommand{\osum}{\sum \hspace*{-2.4ex}\vspace*{-1ex} \circ\hspace*{2.4ex}\vspace{1ex}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\def \fbx#1 {\fbox{$ \displaystyle #1$}}
+\def \bild[#1]#2 {\begin{figure}[H] \includegraphics[#1]{#2} \end{figure}}
+\newcommand{\grad}{ \mathrm{grad} \,}
+\renewcommand{\div}{ \mathrm{div} \,}
+\newcommand{\tot}{ \mathrm{rot} \,}
+
+\begin{document}
+
+%zweispaltig mit überschrift zentriert
+\twocolumn[{\csname @twocolumnfalse\endcsname
+{\centerline{ \Huge \sc Formelsammlung Chemische ReaktionsTechnik II}}
+{\centerline{ \it Florian Enzenberger \& Sebastian Werner, 2006 } }
+{\centerline{ \bf Keinerlei Anspruch auf Vollständigkeit oder Richtigkeit! }}
+\vspace{1ex}
+}]
+
+\input{homogene-katalyse}
+\input{liquid-liquid}
+\input{heterogene-katalyse}
+\input{het2}
+\input{gas-solid}
+\input{ideale-reaktoren}
+\input{reale-reaktoren}
+\input{wirbelschicht-reaktoren}
+\input{reaction-control}
+\input{economics}
+\input{sicherheit}
+
+\end{document}
+
+

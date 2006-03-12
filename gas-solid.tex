@@ -1,0 +1,67 @@
+\section{Feststoff-Gasphasen Reaktionen}
+(Nicht katalytische) Reaktionen zwischen Feststoff und Gasphase kommen in der Praxis oftmals vor:
+\bi
+\item Rösten von sulfidischen Erzen (mit Sauerstoff)
+\item Reduktion von Eisenerz (mit Kohlenmonoxid)
+\item Vergasung von Kohle zu Syngas
+\item Absorption von SO$_2$ durch Kalk
+\item Brennen von Kalkstein zu gebranntem Kalk
+\ei
+\subsection{Poröser Feststoff (CVI)}
+Durch größere spezifische Oberfläche wird die Reaktionszone größer und es kommt zu Massentransportphänomenen wie bereits bekannt. Die Konzentrationsgradienten hängen hierbei direkt mit Reaktionsrate und Diffusion zusammen.\\
+Bei Reaktionen ist zwischen 2 Fällen zu unterscheiden:
+\be
+\item Kleine Poren, Großes Korn: Gradient des Edukts zur Kornmitte hin, diffusionsgehemmt.
+\item Große Poren, Kleines Korn: Quasihomogene Eduktkonzentration im Korn, Reaktion ist limitierend.
+\ee
+In diesem Fall spricht man von Chemical Vapor Infiltration ({\bf CVI}).\\
+Die Reaktion läuft in folgenden Schritten ab:
+\be
+\item Reaktion in der Gasphase von Precursor zum Edukt
+\item Filmdiffusion
+\item Porendiffusion
+\item Oberflächenreaktion mit Filmbildung
+\ee
+Rückweg analog.
+
+\subsection{Nicht-Poröser Feststoff}
+Durch definierte Reaktionsoberfläche wandert die Reaktionszone von außen nach innen durch den Feststoff.\\
+Bei der Reaktion ist zwischen 2 Fällen zu unterscheiden:
+\be
+\item Reaktion bildet ausschliesslich gasförmige Produkte: Radius nimmt mit der Zeit ab
+\item Reaktion bildet ebenfalls festes Produkt: Das entstehende Produkt \emph{muss} porös sein. Hier muss die Diffusion durch diesen Bereich betrachtet werden. Hierzu bietet sich das \emph{Shrinking Core Model} (SCM) an.
+\ee
+Im Fall 2 spricht man von Chemical Vapor Deposition ({\bf CVD}).\\
+Die wichtigsten Schritte sind:
+\be
+\item Konvektiver Transport des Edukts
+\item Massentransport zum Substrat (Grenzfilm)
+\item Adsorption (aus dem Film)
+\item Oberflächendiffusion, Reaktion und Bildung des porösen Produktes
+\ee
+Rückweg analog. Der geschwindigkeitsbestimmende Schritt ergibt sich hierbei durch:\\
+\begin{minipage}[t]{.45\linewidth}
+{\bf Kinetische Limitierung}
+\[ \frac{1}{k_s} \gg \frac{\delta}{D} \]
+Schnelle Diffusion
+\bi
+\item Hohe Gasgeschwindigkeit
+\item Niedrige Temperatur
+\item Geringer Druck
+\ei
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.45\linewidth}
+{\bf Massentransportlimitierung }
+\[ \frac{1}{k_s} \ll \frac{\delta}{D} \]
+Langsame Diffusion
+\bi
+\item Geringe Gasgeschwindigkeit
+\item Hohe Temperatur
+\item Hoher Druck
+\ei
+\end{minipage}
+
+\subsection{Zusammenfassung}
+Der CVD/CVI-Prozess muss durch die Reaktion gesteuert werden, um Kontrolle über die Vollständigkeit der Reaktion zu bekommen. Hier kommt es auf das Verhältnis von Depositions- und Diffusionsrate an.
+

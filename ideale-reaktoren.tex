@@ -1,0 +1,82 @@
+\section{Ideale Reaktoren}
+Allgemeine Massenbilanz:
+\[ \fbx{ \underbrace{ \frac{\partial c_i}{\partial t} }_{ \mbox{Akk.} } = \underbrace{-\div \left( c_i \bar u \right)}_{ \mbox{Konvektion} }
++ \underbrace{\div \left( D_{e,i} \grad c_i \right)}_{ \mbox{Dispersion} } + \underbrace{\sum_j \nu_{ij} r_j}_{ \mbox{Reaktion} } } \qquad \left[ \frac{kmol}{m^3s} \right] \]
+
+\subsection{Ideales Strömungsrohr}
+\[ \fbx{\frac{\partial c_i}{\partial t}=-u \frac{\partial c_i}{\partial z} + \Gamma_i} \qquad DaI=\frac{\tau r_0}{c_{10}}=\int^{X_i}_{0} \frac{r_0}{r} dX_i \]
+mit $r=k c^n$ und volumenkonstanter Reaktion:
+\[ \frac{r_0}{r}= \frac{k c^n_{10}}{c^n_1} = \frac{1}{\left(1 - X \right)^n} \]
+für $n=1,2,3...\ \Rightarrow$ hyperbolische Funktion; für $X \rightarrow 1 \ \Rightarrow \frac{r_0}{r} \rightarrow \infty$ \\
+Fläche unterhalb Hyperbel entspricht $DaI$.
+\bi
+\item[$\Rightarrow$] Reaktionen höherer Ordnung benötigen größere $DaI$-Zahlen (längere Verweilzeit oder größeres Reaktorvolumen, um den selben Umsatzgrad zu erreichen.
+\ei
+\paragraph{Spezialfälle}
+\bi
+\item {\bf reversible Reaktion} Asymptote sinkt von $X=1$ auf $X=X_{eq}$
+\item {\bf autokatalytische Reaktion} $r/r_0$-Kurve weist Minimum ($r=r_{max}$) auf
+\ei
+
+\subsection{Idealer kontinuierlicher Rührkessel}
+\[ \fbx{V \cdot \frac{dc_i}{dt}=\dot V \left( c_{i0} - c_i \right) + V \Gamma_i} \qquad  X_i = \frac{V r}{\dot V c_{i0}}\frac{r_0}{r_0} = DaI \frac{r}{r_0} \]
+Rechteck zwischen $X$-$r/r_0$-Schnittpunkt und Achsen entspricht $DaI$.\\
+$\Rightarrow$ Gewöhnlich ist $DaI_{CSTR}>DaI_{PFTR}$.\\
+Im Falle autokatalytischer Reaktionen erreicht man den höchsten Umsatz durch Reihenschaltung von CSTR und PFTR.
+
+\paragraph{Sonderfall: enzymkatalisierte Reaktion}
+\bi
+\item hyperbolischer Geschwindigkeitsansatz
+\item Massenstrom linear mit $X$, Reaktionsgeschwindigkeit nicht linear mit $X$
+\item[$\Rightarrow$] mehrere stabile Betriebspunkte im $r$-$X$-Diagramm
+\ei
+
+\subsubsection{Enthalpiebilanz für CSTR}
+\[ \fbx{ \underbrace{ \frac{\partial \left( \rho c_pT \right)}{\partial t} }_{ \mbox{Akk.} } =
+\underbrace{-\div \left( \rho c_p T \bar u \right)}_{ \mbox{Konvektion} } + \underbrace{\div \left( \lambda_e \grad T \right)}_{ \mbox{eff. Wärmeltg.} } +
+\underbrace{\sum_j \left( -\Delta H_R \right)_j r_j}_{ \mbox{Reaktion} } } \qquad\left[\frac{kJ}{m^3s}\right]  \]
+Dimensionslose Wärmebilanz:
+\[ \fbx{\underbrace{\left( 1 + H_W \right)}_{\mbox{Wärmetransfer}} \underbrace{ \left( \Theta - \Theta_A \right)}_{\mbox{Kühldifferenz}} = \underbrace{\frac{\tau q_R}{\rho c_p T_0}}_{\mbox{Wärmequelle}}} \]
+mit dimensionslosen Kennzahlen:
+\begin{eqnarray}
+\mbox{Wärmetransferzahl:} & & \quad H_W = \frac{k_w F_k}{\dot V \rho c_p} \nonumber \\
+\mbox{(Kühl-) Temperaturerhöhung:} & & \quad \Theta = \frac{T}{T_0}; \quad \left( \Theta_K = \frac{\bar T_K}{T_0} \approx 1,0 \right) \nonumber \\
+\mbox{Eingangs- zu Kühltemperatur:} & & \quad \Theta_A = \frac{T_0 + H_W \bar T_K}{\left( 1 + H_W \right) T_0} \nonumber
+\end{eqnarray}
+Annahme $n=1$ und ersetzen von $X$ durch 
+\[ X = \frac{DaI}{1 + DaI}=\frac{\tau k_0 \exp \left( - \gamma / \Theta \right)}{1 + \tau k_0 \exp \left( - \gamma / \Theta \right)} \]
+führen zu:
+\[ \fbx{\underbrace{\left( 1 + H_W \right) \left( \Theta - \Theta_A \right)}_{\mbox{Wärmeabfuhrgerade}} = \underbrace{\frac{\Delta T_{ad}}{T_0} \frac{\tau k_0 \exp \left( - \gamma / \Theta \right)}{1 + \tau k_0 \exp \left( - \gamma / \Theta \right)}}_{\mbox{Wärmeerzeugungskurve}}} \]
+
+\paragraph{2 Fälle}
+\be
+\item $H_W$ variiert $\Rightarrow$ Steigung der WAG variiert ($\Theta_K = const.$).
+\item $\Theta_K$ und somit $\Theta_A$ variiert $\Rightarrow$ WAG wird parallelverschoben ($H_W = const.$).
+\item[$\Rightarrow$] Somit ist es möglich den gewünschten Betriebspunkt einzustellen.
+\ee
+\bi
+\item {\bf isothermer Fall} $H_W \rightarrow \infty $: Steigung: $\infty$; WAG$=0$: $\Theta = \Theta_K$ 
+\item {\bf allgemeiner Fall} Steigung: $1 + H_W$; WAG$=0$: $\Theta = \Theta_A$ 
+\item {\bf adiabater Fall} $H_W = 0$: Steigung: $1$; WAG$=0$: $\Theta = \Theta_A = 1$ 
+\ei
+Polpunkt liegt in ($\Theta_K; \ \Theta_K - 1$); Grenzfall $T_0=\bar T_K \ \Rightarrow \ \Theta_K=1$: Pol($1; \ 0$)\\
+\bi
+\item[$\Rightarrow$] Vergleiche Zünd-/Löschverhalten (Kernfachvorlesung)
+\item Kriterium für stabilen Betriebspunkt:
+\ei
+\[ \mbox{Steigung}_{WAG} \stackrel{!}{>} \mbox{Steigung}_{WEK} \]
+\bi
+\item[PFTR:] nur ein Abschnitt befindet sich im kritischen Fall im zündwilligen Bereich von $X$.
+\item[CSTR:] wenn $X$ in zündwilligen Bereich kommt, dann geht der ganze Reaktor durch!
+\ei
+\subsubsection{Instationäre Betriebsweise}
+\bi
+\item beim Hochfahren des Reaktors bis zum gewünschten Betriebspunkt
+\item beim Ändern des Betriebszustandes
+\item[$\Rightarrow$] Wie lange dauert die instationäre Periode?
+\ei
+Aus instationärer und stationärer Massenbilanz folgt für die Einstellung von $c_{A,s}$:
+\[ t = -\frac{\tau}{ 1 + k \tau} \ln \left( \frac{c_{A,s} - c_A}{c_{A,s}} \right) \]
+$\Rightarrow$ wichtiges Kriterium ist hier die Verweilzeit!
+
+

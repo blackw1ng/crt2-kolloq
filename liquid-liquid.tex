@@ -1,0 +1,277 @@
+\section{Fluid-Fluid Reaktionssysteme}
+\subsection{Allgemeines}
+Man unterscheidet in der Praxis zwischen
+\be
+\item Gas-Flüssig- und
+\item Flüssig-Flüssig-Systeme
+\ee
+Im Allgemeinen findet die Reaktion in einer der flüssigen Phasen statt, in welcher auch der Katalysator gelöst ist. 
+Die Aufgabe der anderen Phase ist hierbei, das Extraktionssolvent für das Produkt und den optimalen Transport der Edukte zu sein. 
+Ein schneller Abtransport der Produkte aus dem Reaktionsmedium ist im Hinblick auf Folgereaktionen besonders wichtig. Hieraus ergeben sich für solche Systeme folgende Randbedingungen:
+\bi
+\item Reaktionsphase muss den Katalysator lösen und immobilisieren
+\item Deaktivierung des Katalysators sollte gering sein
+\item Löslichkeit der Edukte in Reaktionsphase sollte hoch sein
+\item Mischungslücke zwischen Produkt und Reaktionsphase (Direkte Abtrennung des Produkts zur Vermeidung von Folgereaktionen) vorteilhaft
+\ei
+Für die Modellierung geht man wie folgt vor:
+\bi
+\item Massentransfer in beiden Phasen
+\item Phasenübergang
+\item Gradient an Phasenübeangsfilm kontrolliert Transportrate
+\ei
+
+\subsection{Zweifilm-Theorie}
+\begin{minipage}[t]{.65\linewidth}
+\bi 
+\item Stagnierender Film an beiden Seiten der Grenzfläche
+\item Gesamter Transportwiderstand in diesem Bereich
+\item Gleichgewicht an Phasengrenzfläche
+\item Im Film nur molekulare Diffusion ($\rightarrow$ {\sc Fick}'sches Gesetz)
+\ei
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.3\linewidth}
+\bild[height=25mm]{images/twofilm.eps}
+\end{minipage}
+
+Daraus ergibt sich:
+\[ \fbx{J_{i,g} = - D_{i,g} \frac{\Delta c_{i,g}}{\delta_g} = - D_{i,l} \frac{\Delta c_{i,l}}{\delta_l} = J_{i,l}} \quad [mol/m^2] \]
+Dabei wird oftmals der {\bf Massentransportkoeffizient} $k$ verwendet:
+\[ \fbx{ k = \frac{D}{\delta} } \quad [m/s] \]
+An den Phasengrenzflächen gilt:
+\[ \mbox{\sc Henry}\quad p_{i,g}^* = H_i \cdot c_{i,l}^* \]
+\[ \mbox{\sc Nernst}\quad c_{i,l}^* = K_{N,ij} \cdot c_{j,l}^* \]
+In der Praxis sind die Konzentrationen an der Phasengrenzfläche (gekennzeichnet durch $^*$) meist unbekannt. Diese können bei Berechnung durch Gleichsetzen der Flow-Rates $J_{i}$ eliminiert werden.
+
+\subsection{Kopplung von Reaktion und Massentransport}
+\subsubsection{Langsame Reaktion - Reaktion im Bulk}
+
+\begin{minipage}[t]{.65\linewidth}
+Die Reaktion an Phasengrenzfäche kann vernachlässigt werden.
+Es wird vorausgesetzt, dass $c_b$ im Überschuss vorhanden ist.
+Somit:
+\[ \rightarrow J \cdot a = k_l \cdot a \left( c_a^* - c_{a,l} \right ) \]
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.3\linewidth} 
+\bild[height=25mm]{images/langsam-imbulk.eps}
+\end{minipage}
+Unter Verwendung von
+\[ r = c_{a,l} \cdot c_{b,l} \cdot k' \quad \mbox{und} \quad c_b = c_{b,l} = const \]
+ergibt sich:
+\[ r_{eff} = \left[ \frac{1}{k_l a} + \frac{1}{k} \right]^{-1} c_a^* \]
+wobei $c_a^ = \frac{p_{a,g}}{H_a}$ gilt.
+
+\subsubsection{Schnelle Reaktion - Reaktion im Film}
+\begin{minipage}[t]{.65\linewidth}
+Kombination von Massentransport und Reaktion. Ähnlich der Situation am Katalysatorkorn. Kann durch Massenbilanz gelöst werden.
+Ansatz:
+\[ \left.(J_a a)\right|_{y} - \left.(J_a a)\right|_{y+dy} = k' c_a c_b a\, dy \]
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.3\linewidth}
+\bild[height=25mm]{images/schnell-imfilm.eps}
+\end{minipage}
+Lösung durch Anwendung von {\sc Fick}'schem Gesetz und {\sc Taylor}-Entwicklung, sowie der Vereinfachungen $p^* = p_g$ und $c^* = \frac{p_g}{H}$ ergibt Lösung, welche die $Ha$-Zahl enthält.\\
+\begin{minipage}[t]{.65\linewidth}
+\[ \fbx{ Ha = \delta \sqrt{\frac{k\cdot c_1^{* n-1}}{D_{1,l}}} } \]
+Das Konzentrationsprofil ändert sich logischerweise drastisch mit Reaktionsgeschwindigkeit.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.3\linewidth}
+\bild[height=25mm]{images/konz-verlauf.eps}
+\end{minipage}
+
+\subsection{Wirkungsgrad der Flüssigkeit}
+Die Definition des Wirkungsgrades ist 
+\[ \fbx{ \eta = \frac{r_{eff}}{r_{max}} } = \frac{Ha}{\tanh Ha} \left( 1 - \frac{c_{1l}}{\cosh Ha} \right) \frac{k_{1l}a}{k} \]
+Hierbei sind die Grenzfälle für Fluid-Fluid-Reaktionen interessant.
+\begin{minipage}[t]{.45\linewidth}
+$k \rightarrow 0$ und $Ha \rightarrow 0$
+\[ \eta = \frac{1}{\frac{k}{k_l a} + 1} \]
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.45\linewidth}
+$k \gg 1$ und $Ha > 3$
+\[ \eta = a \sqrt{\frac{d_l}{k}} \]
+\end{minipage}
+Folglich kann der Wirkungsgrad durch größere Phasengrenzfläche verbessert werden.
+
+\subsection{Enhancement Faktor}
+Der Enhancement-Faktor beschreibt die Veränderung des Stoffüberganges unter Einfluss einer Reaktion:
+\[\fbx{ E = \frac{J_{\mbox{mit Reaktion}}}{J_{\mbox{ohne Reaktionseinfluss}}} } \]
+Hierbei stellen sich dann 5 Grenzfälle ein:
+\be
+\item
+\begin{minipage}[t]{.75\linewidth}
+Langsame Reaktion $Ha < 0.3$\\
+$E = 1$, Massentransfer unbeeinflusst von Reaktion.
+Alles reagiert im Bulk.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.2\linewidth}
+\bild[height=20mm]{images/enhance-1.eps}
+\end{minipage}
+
+\item
+\begin{minipage}[t]{.75\linewidth}
+Mittelschnelle Reaktion $0.3 < Ha < 3$\\
+$E > 1$, Reaktion beschleunigt Massentransport.
+Reaktion teilweise im Film.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.2\linewidth}
+\bild[height=20mm]{images/enhance-2.eps}
+\end{minipage}
+
+\item
+\begin{minipage}[t]{.75\linewidth}
+Schnelle Reaktion $Ha > 3$ \\
+$E \approx Ha$, Massentransport unabhängig von $k_l$!
+Hier: $J = c^* \sqrt{k \cdot D_l}$; Reaktion vollständig im Film.
+Pseudo-Erster-Ordnung!
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.2\linewidth}
+\bild[height=20mm]{images/enhance-3.eps}
+\end{minipage}
+
+\item
+\begin{minipage}[t]{.75\linewidth}
+$Ha \gg 3 \quad - \quad 5 E_{max} > Ha > \frac{E_{max}}{5}$\\
+Sehr schnelle Reaktion bereits im Diffusionslayer.
+Vergleichbar Reaktion zweiter Ordnung!
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.2\linewidth}
+\bild[height=20mm]{images/enhance-4.eps}
+\end{minipage}
+
+\item
+\begin{minipage}[t]{.75\linewidth}
+$E_{max} < \frac{Ha}{5}$
+Sofortige Reaktion. Reaktion direkt an Phasengrenzfläche.
+Beispiel: Säure + Lauge.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.2\linewidth}
+\bild[height=20mm]{images/enhance-5.eps}
+\end{minipage}
+\ee
+
+Im nachfolgenden Graph sind die 5 Fälle erkennbar:
+\bild[width=80mm]{images/e-ha.eps}
+
+Das Maximal mögliche Enhancement ergibt sich zu:
+\[ \fbx{E_{max} = 1 + \frac{\nu_1}{\nu_2} \frac{D_2}{D_1} \frac{c_{2,l}}{c^*_1}} \]
+Im Falle maximalen Enhancements kommt die Reaktion quasi zum Reaktanden.
+
+\subsection{Bestimmung der optimalen Austauschfläche a}
+Für eine optimale Reaktion muss die Massentransporthemmung minimal sein.
+Für die Auswahl eines Reaktortyps, welcher entsprechenden Massentransport und Verweilzeiten ermöglicht, wird über die
+Kennzahl $B$ eine Beurteilung vorgenommen.
+\[ \fbx{ B = \frac{\mbox{Grenzfilmvolumen}}{\mbox{Flüssigkeitsvolumen}} = \frac{A\delta}{V_l} = a \cdot \delta } \]
+\begin{figure}[H]
+\beginpicture
+\setcoordinatesystem units <1.7cm,1.7cm>
+\setplotarea x from -4 to 0, y from -2 to 0
+\axis bottom label {$\log B$} ticks numbered from -4 to 0 by 1 unlabeled short from -4 to 0 by 0.1 /
+\axis left label {\rotatebox{90}{$\log \eta$}} ticks numbered from -2 to 0 by 1 unlabeled short from -2 to 0 by 0.1  /
+\axis top /
+\axis right /
+\setdots <2pt>
+\linethickness 1pt
+\setquadratic
+\setsolid
+\plot -4 -0.3 -3 -0.06 0 0 /
+\plot -4 -1.3 -2.65 -0.3 0 0 /
+\plot -4 -2 -2.5 -0.5 0 0 /
+\plot -3 -2 -1.8 -0.7 0 0 /
+\plot -2.1 -2 -1 -0.8 0 -0.15 /
+\setlinear
+\plot -1.5 -2 0 -0.5 /
+\put {Ha = 0,01} at -3.5 -0.35
+\put {0,05} at -3.75 -0.7
+\put {0,1} at -3.1 -0.7
+\put {0,3} at -2 -0.7
+\put {1,0} at -1.15 -0.7
+\put {3,0} at -0.2 -1
+\put {operation range} at -1.9 -1.3
+\linethickness 3pt
+\plot -3.7 -1.4 -1.1 -1.4 /
+\endpicture
+\end{figure}
+Übliches Einsatzgebiet ist: $2\cdot10^{-4} < B < 10^{-1}$.\\
+Im Diagramm ist oben rechts der Massentransport ausreichend schnell, während unten links eine massive Hemmung stattfindet.\\
+Folglich:
+\bi
+\item Für kleine Ha-Zahlen sorgt ein größeres B (Oberfläche!) nicht für größere Kapazitäten (Reaktion im Bulk!)
+\item Für schnelle Reaktionen (große Ha) muss eine große Oberfläche (B!) bereitgestellt werden, da sonst $\eta$ sehr klein wird.
+\ei
+
+\subsection{Ruhrchemie-Rhone-Poulenc Prozess}
+Der RCH/RP-Prozess ist eine technische Umsetzung der Hydroformylierung von Propen. Hierbei sollen bevorzugt die linearen $n$-Aldehyde und nicht die verzweigten $iso$-Aldehyde gebildet werden, da hier ein größerer Bedarf besteht. $n$-Aldehyde bieten Zugang zu Poly-Olen, Aminen und Carboxyl-Funktionen.
+
+\subsubsection{Technische Umsetzung}
+Die Reaktion wird in einem Biphasischen liquid-Liquid-System mit wassergelöstem Rh-Katalysator (TPPTS) durchgeführt, welcher die geforderte Selektivität bietet. Das Hauptproblem ist wieder die Abtrennung des Katalysators. Hierfür bieten sich 3 Lösungen an:
+\be
+\item Produktabtrennung durch {\bf Strippen}. Hier wird ein großer Recycle-Gas-Strom verwendet, wobei der Katalysator im Reaktor verbleibt.
+\item Produkte aus Flüssigphase {\bf abdestillieren}. Katalysator wird in Hochsieder gelöst und aus Kolonnensumpf zurückgeführt. Vorteil ist, dass weniger Katalysator benötigt wird.
+\item Produktabtrennung via {\sc Absetzen}. Hier ist viel, möglichst hydrophiler Katalysator und ein großer Reaktor erforderlich.
+\ee
+
+\subsubsection{Reaktorkonzepte}
+Das heute typische Konzept ist ein CSTR mit wassergelöstem TPPTS-Katalysator. Interessant ist hierbei, dass das $n$-Aldehyd zum Kühlen des CSTR verwendet wird. Die Rückführung der wässrigen Reaktionsphase wird via Settler erreicht. Die Aldehyd-Phase wird dann, zwecks Rückführung des unverbrauchten Propens mit frischem Syngas gestripped. Das Roh-Aldehyd wird dann in $n$- und $iso$-Fraktion rektifiziert.\\
+Eine aktuelle Variante ist einen PFTR mit turbulenzbildenden Einbauten (z.B. Sulzer SMV). Hier verwendet man ein hochverdünntes Reaktionsgemisch mit sehr hoher Katalysatorkonzentration. 
+Durch die hohe Turbulenz entstehen kleinste Syngasbläschen und Olefintröpfchen, was in einer sehr hohen Interface-Area $a$ resultiert. 
+In Folge dessen kann ein $STY$ erreicht werden, welches bis zu 10x höher als beim klassischen Reaktorkonzept ist. 
+Untersuchungen haben ergeben, dass hier die Reaktion vor allem im Bulk stattfindet.
+
+\subsection{Spezielle Lösungsmittelkonzepte}
+Für besondere Anwendungen im Bereich der biphasischen homogenenen Katalyse haben sich spezielle Lösungsmittelkonzepte entwickelt.
+\subsubsection{Flourierte Phasen}
+Verwendung hochflourierter Alkane als Reaktionsphase.
+\bi
+\item[$\oplus$] Mischungslücke mit Wasser und Kohlenwasserstoffen
+\item[$\oplus$] Hohe Dichte
+\item[$\oplus$] Hohe Löslichkeit von O$_2$
+\item[$\ominus$] Hohe Flüchtigkeit
+\item[$\ominus$] Teuer
+\item[$\ominus$] Gefahr der Verschmutzung der Produkte
+\item[$\ominus$] Hoher Trennaufwand
+\ei
+
+\subsubsection{Überkritisches CO$_2$ (scCO$_2$)}
+CO$_2$ im Überkritischen Zustand ($T_C = 31.1\,°C$, $P_C = 73.6\,bar$) vereint viele Vorteile von Flüssigkeiten und Gasen.
+\bi
+\item[$\oplus$] Gasartige, geringe Viskosität
+\item[$\oplus$] Hohes $D_e$
+\item[$\oplus$] Geringe Oberflächenspannung 
+\item[$\oplus$] Dichte wie eine Flüssigkeit
+\item[$\oplus$] Lösungsmittel für s/l-Systeme
+\item[$\oplus$] Wärmetransport in der Größenordnung von Flüssigkeiten
+\item[$\oplus$] Preiswert, Ungiftig, Unbrennbar
+\item[$\oplus$] Trennaufwand gering (Flash!)
+\item[$\ominus$] Metallkomplexe nur gering löslich
+\item[$\ominus$] Hoher Druck notwendig
+\ei
+
+\subsubsection{Ionische Flüssgkeiten (IL)}
+Salze, die unter $100\,°C$ flüssig sind, werden ILs genannt.
+\bi
+\item[$\oplus$] Kein messbarer Dampfdruck $\rightarrow$ Trennaufwand gering
+\item[$\oplus$] Hohe Stabilität
+\item[$\oplus$] Mischungslücken mit unpolaren Fluiden
+\item[$\ominus$] Teuer
+\item[$\ominus$] Giftigkeit ungeklärt
+\item[$\ominus$] Hohe Viskosität
+\ei
+Als Anwendungen bieten sich somit an:
+\bi
+\item Elektrochemie
+\item Analytik
+\item Katalyse
+\item Solvent
+\item Engineering Fluid
+\ei
